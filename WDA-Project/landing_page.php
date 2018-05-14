@@ -48,8 +48,8 @@
                         </select>
                     </div>
                     <div class="filters-input-flexitems">
-                        <input type="text" id="datepicker1" placeholder="Check-In Date">
-                        <input type="text" id="datepicker2" placeholder="Check-Out Date">
+                        <input type="text" id="datepicker1" name="checkin" placeholder="Check-In Date">
+                        <input type="text" id="datepicker2" name="checkout" placeholder="Check-Out Date">
                     </div>
                     <input type="submit" value="Search">
                 </form>
@@ -59,8 +59,8 @@
             <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
             <script>
                 $( function() {                    
-                    $( "#datepicker1" ).datepicker();
-                    $( "#datepicker2" ).datepicker();
+                    $( "#datepicker1" ).datepicker({dateFormat:"yy-mm-dd"});
+                    $( "#datepicker2" ).datepicker({dateFormat:"yy-mm-dd"});             
                 } );
             </script>
         </main>

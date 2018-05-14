@@ -46,7 +46,7 @@
                             <span style="font-size: 14px;">ATHENS, ZWGRAFOU</span>
                             <p>Mpla mpla mpla mpla mpla mpla mpla polles lekseis edw 
                                 Mpla mpla mpla mpla mpla mpla mpla polles lekseis edw</p>
-                            <button type="button" onclick="location.href='room_page.php';">Go to Room Page</button>
+                                <a href="room_page.php?room_id=<?php echo $row["room_id"]?>">Go to Room Page</a>
                         </div>
                         <div class="hotel-price-container">
                             <div class="hotel-price">

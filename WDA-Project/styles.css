@@ -167,7 +167,6 @@ Results page
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
 }
 
 .resultpage-guests {
@@ -303,7 +302,7 @@ Results page
     font-size: 16px;
 }
 
-.hotel-text button {
+.hotel-text a {
     background-color: red;
     color: white;
     border-radius: 4px;
@@ -312,9 +311,10 @@ Results page
     text-align: center;
     text-decoration: none;
     float: right;
+    font-size: 12px;
 }
 
-.hotel-text button:hover {
+.hotel-text a:hover {
     background-color: rgb(187, 8, 8);
     color: white;
 }
@@ -358,6 +358,10 @@ Results page
 
 .hotel-room>span:first-child{
     border-right: 2px solid grey;
+}
+
+.checked {
+    color: orange;
 }
 /* #endregion */
 
@@ -449,7 +453,7 @@ Results page
     text-align: right;
 }
 
-.book-button button {
+.book-button input[type=submit] {
     background-color: red;
     color: white;
     border-radius: 4px;
@@ -460,7 +464,7 @@ Results page
     float: right;
 }
 
-.book-button button:hover {
+.book-button input[type=submit]:hover {
     background-color: rgb(187, 8, 8);
     color: white;
 }
@@ -570,3 +574,4 @@ float: right;
 .rating > label:hover ~ input:checked ~ label, /* lighten current selection */
 .rating > input:checked ~ label:hover ~ label { color: #FFED85;  }
 /* #endregion */
+
