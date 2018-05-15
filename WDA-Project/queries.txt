@@ -1,3 +1,0 @@
-select distinct room_type.room_type from room_type inner join room on room_type.id=room.room_type //roomtypes for select
-select distinct city from room //cities for select
-//append to query based on every user choice

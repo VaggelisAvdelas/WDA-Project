@@ -17,11 +17,11 @@
         </nav>
         <main>
             <div class="slideshow-container">
-                <img class="mySlides fade" src="images/rooms/room-10.jpg" alt="room-image" style="width: 100%">
-                <img class="mySlides fade" src="images/rooms/room-9.jpg" alt="room-image" style="width: 100%">
-                <img class="mySlides fade" src="images/rooms/room-3.jpg" alt="room-image" style="width: 100%">
-                <img class="mySlides fade" src="images/rooms/room-4.jpg" alt="room-image" style="width: 100%">
-                <img class="mySlides fade" src="images/rooms/room-5.jpg" alt="room-image" style="width: 100%">
+                <img class="mySlides" src="images/rooms/room-10.jpg" alt="room-image" style="width: 100%">
+                <img class="mySlides" src="images/rooms/room-9.jpg" alt="room-image" style="width: 100%">
+                <img class="mySlides" src="images/rooms/room-3.jpg" alt="room-image" style="width: 100%">
+                <img class="mySlides" src="images/rooms/room-4.jpg" alt="room-image" style="width: 100%">
+                <img class="mySlides" src="images/rooms/room-5.jpg" alt="room-image" style="width: 100%">
             </div>
             <div class="form-container">
                 <form class="filters-flexbox-container" action="list_page.php" method="GET">
@@ -48,8 +48,8 @@
                         </select>
                     </div>
                     <div class="filters-input-flexitems">
-                        <input type="text" id="datepicker1" name="checkin" placeholder="Check-In Date">
-                        <input type="text" id="datepicker2" name="checkout" placeholder="Check-Out Date">
+                        <input type="text" id="datepicker1" name="checkin" placeholder="Check-In Date" required>
+                        <input type="text" id="datepicker2" name="checkout" placeholder="Check-Out Date" required>
                     </div>
                     <input type="submit" value="Search">
                 </form>
@@ -59,8 +59,25 @@
             <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
             <script>
                 $( function() {                    
-                    $( "#datepicker1" ).datepicker({dateFormat:"yy-mm-dd"});
-                    $( "#datepicker2" ).datepicker({dateFormat:"yy-mm-dd"});             
+                    $( "#datepicker1" ).datepicker({
+                        dateFormat:"dd-mm-yy",
+                        minDate: 0,
+                        onSelect: function() {
+                            var dt2 = $("#datepicker2");
+                            var minDate = $(this).datepicker('getDate');
+                            var dt2Date = dt2.datepicker('getDate');
+                            //difference in days. 86400 seconds in day, 1000 ms in second
+                            var dateDiff = (dt2Date - minDate)/(86400*1000);
+                            //dt2 not set or dt1 date is greater than dt2 date
+                            if (dt2Date == null || dateDiff < 0) {
+                                dt2.datepicker('setDate', minDate);
+                            }
+                            //first day which can be selected in dt2 is selected date in dt1
+                            dt2.datepicker('option', 'minDate', minDate);
+                        }});
+                    $( "#datepicker2" ).datepicker({
+                        dateFormat:"dd-mm-yy",
+                        minDate: 0});
                 } );
             </script>
         </main>

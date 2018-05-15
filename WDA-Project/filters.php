@@ -57,10 +57,10 @@
             <div id="slider-range"></div>
         </div>
         <div class="resultpage-checkin">
-            <input type="text" name="checkin" id="datepicker1" placeholder="Check-In Date">
+            <input type="text" name="checkin" id="datepicker1" placeholder="Check-In Date" required>
         </div>
         <div class"resultpage-checkout">
-            <input type="text" name="checkout" id="datepicker2" placeholder="Check-Out Date">
+            <input type="text" name="checkout" id="datepicker2" placeholder="Check-Out Date" required>
         </div>
         <div class="resultpage-submitbutton">
             <input type="submit" value="FIND HOTEL">

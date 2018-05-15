@@ -36,7 +36,7 @@
 
                 $rating = $_POST["rating"];
                 $text = $_POST["text-review"];
-                $date = date('Y-m-d H:i:s');
+                $date = date("Y-m-d H:i:s");
                 $user_id = 1;
                 $hotel_id = $_GET["room_id"];
                 $stmt->execute();
@@ -62,6 +62,7 @@
                 </div>
             </div>
         </main>
-    <?php include "footer.php"; ?>
+        <?php include "footer.php"; ?>
     </body>
 </html>
+<?php mysqli_close($conn); ?>
